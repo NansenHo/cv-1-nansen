@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+    <title>何南松的简历</title>
+</head>Î
+<body>
+    <!-- test -->
+    <style id="style"></style>
+    <div id="html" "=""></div> 
+    <div id="div1Wrapper">
+        <div id="div1"></div>
+    </div>
+
+    <!-- 拿个容器把 hi 包起来 -->
+    <style>*{margin: 0;padding: 0;}
+        *{box-sizing: border-box;}
+        *::before{box-sizing: border-box;}
+        *::after{box-sizing: border-box;}
+        #html{
+            word-break: break-all; /*遇到屏幕宽度不够就换行，避免横向滚动条的出现。*/
+        }
+        #div1{
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+            right: 50px;
+            top: 30px;
+        }
+        #div1::before{ /*可以用伪元素来做，因为是 CSS 加的元素，所以它不是一个真的元素*/
+            content: ''; /*可以理解为是一个 <span> ，千万不能删 content ，删了就没有 <span> 了。*/
+            display: block;   
+            position: absolute;
+        }
+        #div1::after{
+            content: '';
+            display: block;
+            position: absolute;
+        }
+
+        @media(max-width: 500px){ /* 媒体查询非常简单，就是一个 if else 。*/
+            #html{
+                height: 50vh;
+                overflow: auto; /*代码和图形一个一半*/
+            }
+            #div1Wrapper{
+                height: 50vh;
+
+            }
+            #div1{
+                position: relative; /*要将之前的 position: fixed 改成 relative 。*/
+                top: 10vh;
+                right: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }</style>
+    <script src="/main.1f19ae8e.js"></script>
+</body>
+</html>
